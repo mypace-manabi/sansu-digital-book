@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <main class="app-shell">
     <aside id="sidebar" class="sidebar" aria-label="検索と目次">
       <div class="sidebar-head">
@@ -23,6 +22,16 @@
         </div>
         <div id="resultCount" class="result-count"></div>
       </div>
+
+      <section id="unitInfo" class="unit-info" aria-live="polite">
+        <div class="unit-heading">
+          <span id="unitBadge" class="unit-badge"></span>
+          <h1 id="unitTitle" class="unit-title">読み込み中...</h1>
+        </div>
+        <p id="unitSummary" class="unit-summary"></p>
+        <div id="unitKeywords" class="keyword-list"></div>
+      </section>
+
       <nav id="tocList" class="toc-list"></nav>
     </aside>
 
@@ -44,27 +53,17 @@
         <button id="fitWidthButton" class="toolbar-button">幅に合わせる</button>
       </div>
 
-      <div id="unitInfo" class="unit-info" aria-live="polite">
-        <div>
-          <span id="unitBadge" class="unit-badge"></span>
-          <h1 id="unitTitle" class="unit-title">読み込み中...</h1>
-        </div>
-        <p id="unitSummary" class="unit-summary"></p>
-        <div id="unitKeywords" class="keyword-list"></div>
-      </div>
-
       <div id="pdfViewport" class="pdf-viewport">
         <div id="loadingMessage" class="loading-message">PDFを読み込んでいます...</div>
-        <div id="pdfSpread" class="pdf-spread" aria-label="PDF見開き表示">
-          <canvas id="pdfCanvasLeft" class="pdf-canvas" aria-label="PDF左ページ"></canvas>
-          <canvas id="pdfCanvasRight" class="pdf-canvas" aria-label="PDF右ページ"></canvas>
+        <div id="pdfSpread" class="pdf-spread" aria-label="PDF 2ページ縦表示">
+          <div class="page-card"><canvas id="pdfCanvasLeft" class="pdf-canvas" aria-label="PDF 1ページ目"></canvas></div>
+          <div class="page-card"><canvas id="pdfCanvasRight" class="pdf-canvas" aria-label="PDF 2ページ目"></canvas></div>
         </div>
       </div>
     </section>
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script type="module" src="app.js"></script>
 </body>
 </html>

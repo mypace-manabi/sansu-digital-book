@@ -188,18 +188,18 @@ async function renderSpread() {
     const baseViewport = firstPage.getViewport({ scale: 1 });
     const isNarrow = window.innerWidth <= 850;
     const outerPadding = isNarrow ? 24 : 48;
-    const gap = isNarrow ? 12 : 20;
     const availableWidth = Math.max(280, els.viewport.clientWidth - outerPadding);
-    const pagesAcross = isNarrow ? 1 : 2;
-    const pageWidth = pagesAcross === 2 ? (availableWidth - gap) / 2 : availableWidth;
+    // 常に縦並びのため、1ページを表示領域の幅に合わせます。
+    const pageWidth = availableWidth;
     targetScale = Math.min(2.3, pageWidth / baseViewport.width);
     scale = targetScale;
   }
 
-  await Promise.all([
-    renderCanvas(currentPage, els.canvases[0], contexts[0], targetScale, serial),
-    renderCanvas(currentPage + 1, els.canvases[1], contexts[1], targetScale, serial)
-  ]);
+  // iPad Chrome / Safari では同時レンダリング時に2ページ目が失敗することがあるため、順番に描画します。
+  await renderCanvas(currentPage, els.canvases[0], contexts[0], targetScale, serial);
+  if (serial !== renderSerial) return;
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  await renderCanvas(currentPage + 1, els.canvases[1], contexts[1], targetScale, serial);
   if (serial !== renderSerial) return;
 
   els.loading.style.display = 'none';
