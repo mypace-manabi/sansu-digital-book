@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <main class="app-shell">
     <aside id="sidebar" class="sidebar" aria-label="検索と目次">
       <div class="sidebar-head">
@@ -37,7 +38,10 @@
         <button id="nextPageButton" class="toolbar-button">›</button>
         <button id="nextUnitButton" class="toolbar-button">次の単元</button>
         <span class="toolbar-separator"></span>
-        <a class="toolbar-button pdf-open-link" href="./pdf/sansu_F.pdf" target="_blank" rel="noopener">PDFを別画面で開く</a>
+        <button id="zoomOutButton" class="toolbar-button">−</button>
+        <span id="zoomLabel" class="zoom-label">100%</span>
+        <button id="zoomInButton" class="toolbar-button">＋</button>
+        <button id="fitWidthButton" class="toolbar-button">幅に合わせる</button>
       </div>
 
       <div id="unitInfo" class="unit-info" aria-live="polite">
@@ -51,7 +55,7 @@
 
       <div id="pdfViewport" class="pdf-viewport">
         <div id="loadingMessage" class="loading-message">PDFを読み込んでいます...</div>
-        <iframe id="pdfFrame" class="pdf-frame" title="算数指導書PDF" src="about:blank"></iframe>
+        <canvas id="pdfCanvas" aria-label="PDFページ"></canvas>
       </div>
     </section>
   </main>
