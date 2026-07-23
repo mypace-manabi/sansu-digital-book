@@ -45,10 +45,7 @@
         <button id="nextPageButton" class="toolbar-button">›</button>
         <button id="nextUnitButton" class="toolbar-button">次の単元</button>
         <span class="toolbar-separator"></span>
-        <button id="zoomOutButton" class="toolbar-button">−</button>
-        <span id="zoomLabel" class="zoom-label">100%</span>
-        <button id="zoomInButton" class="toolbar-button">＋</button>
-        <button id="fitWidthButton" class="toolbar-button">幅に合わせる</button>
+        <a class="toolbar-button pdf-open-link" href="./pdf/sansu_F.pdf" target="_blank" rel="noopener">PDFを別画面で開く</a>
       </div>
 
       <div id="unitInfo" class="unit-info" aria-live="polite">
@@ -62,7 +59,7 @@
 
       <div id="pdfViewport" class="pdf-viewport">
         <div id="loadingMessage" class="loading-message">PDFを読み込んでいます...</div>
-        <canvas id="pdfCanvas" aria-label="PDFページ"></canvas>
+        <iframe id="pdfFrame" class="pdf-frame" title="算数指導書PDF" src="about:blank"></iframe>
       </div>
     </section>
   </main>
