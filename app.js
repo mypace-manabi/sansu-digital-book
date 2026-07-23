@@ -7,7 +7,11 @@ const PDF_URL = './pdf/sansu_F.pdf';
 const DATA_URL = './data/contents.json';
 
 const els = {
-  canvas: document.getElementById('pdfCanvas'),
+  canvases: [
+    document.getElementById('pdfCanvasLeft'),
+    document.getElementById('pdfCanvasRight')
+  ],
+  spread: document.getElementById('pdfSpread'),
   viewport: document.getElementById('pdfViewport'),
   loading: document.getElementById('loadingMessage'),
   tocList: document.getElementById('tocList'),
@@ -33,15 +37,15 @@ const els = {
   toast: document.getElementById('toast')
 };
 
-const ctx = els.canvas.getContext('2d', { alpha: false });
+const contexts = els.canvases.map(canvas => canvas.getContext('2d', { alpha: false }));
 let pdfDoc = null;
 let contents = [];
 let currentPage = 3;
 let currentUnitId = 'f18';
-let scale = 1.15;
+let scale = 1.05;
 let fitWidthMode = true;
 let currentFilter = 'all';
-let renderTask = null;
+let renderTasks = [];
 let renderSerial = 0;
 
 function normalize(text) {
@@ -84,10 +88,8 @@ function updateUnitInfo() {
   const unit = getUnitForPage(currentPage);
   if (!unit) {
     els.unitBadge.textContent = '案内';
-    els.unitTitle.textContent = currentPage === 1 ? '目次' : '白紙ページ';
-    els.unitSummary.textContent = currentPage === 1
-      ? 'PDF本体の目次です。左側の検索目次からも単元へ移動できます。'
-      : '見開き印刷を想定した白紙ページです。';
+    els.unitTitle.textContent = currentPage <= 2 ? '目次・白紙ページ' : '案内ページ';
+    els.unitSummary.textContent = '左側の検索目次から単元を選択してください。';
     els.unitKeywords.innerHTML = '';
     currentUnitId = '';
   } else {
@@ -127,7 +129,7 @@ function renderToc() {
     <button class="toc-item ${item.id === currentUnitId ? 'active' : ''}" data-id="${item.id}" data-page="${item.startPage}">
       <span class="toc-code">${escapeHtml(item.code)}</span>
       <span class="toc-title">${escapeHtml(item.title)}</span>
-      <span class="toc-page">p.${item.startPage}</span>
+      <span class="toc-page">p.${item.startPage}-${item.endPage}</span>
     </button>
   `).join('');
 
@@ -139,46 +141,73 @@ function renderToc() {
   });
 }
 
-async function renderPage() {
-  if (!pdfDoc) return;
-  const serial = ++renderSerial;
-  if (renderTask) {
-    try { renderTask.cancel(); } catch (_) {}
+function cancelRenders() {
+  renderTasks.forEach(task => {
+    try { task?.cancel(); } catch (_) {}
+  });
+  renderTasks = [];
+}
+
+async function renderCanvas(pageNumber, canvas, context, targetScale, serial) {
+  if (pageNumber > pdfDoc.numPages) {
+    canvas.style.display = 'none';
+    return;
   }
 
-  currentPage = Math.min(Math.max(currentPage, 1), pdfDoc.numPages);
-  const page = await pdfDoc.getPage(currentPage);
-  let targetScale = scale;
-
-  if (fitWidthMode) {
-    const baseViewport = page.getViewport({ scale: 1 });
-    const availableWidth = Math.max(280, els.viewport.clientWidth - (window.innerWidth <= 850 ? 24 : 48));
-    targetScale = Math.min(2.3, availableWidth / baseViewport.width);
-    scale = targetScale;
-  }
-
+  const page = await pdfDoc.getPage(pageNumber);
+  if (serial !== renderSerial) return;
   const viewport = page.getViewport({ scale: targetScale });
   const outputScale = Math.min(window.devicePixelRatio || 1, 2);
-  els.canvas.width = Math.floor(viewport.width * outputScale);
-  els.canvas.height = Math.floor(viewport.height * outputScale);
-  els.canvas.style.width = `${Math.floor(viewport.width)}px`;
-  els.canvas.style.height = `${Math.floor(viewport.height)}px`;
+
+  canvas.width = Math.floor(viewport.width * outputScale);
+  canvas.height = Math.floor(viewport.height * outputScale);
+  canvas.style.width = `${Math.floor(viewport.width)}px`;
+  canvas.style.height = `${Math.floor(viewport.height)}px`;
+  canvas.style.display = 'block';
 
   const transform = outputScale !== 1 ? [outputScale, 0, 0, outputScale, 0, 0] : null;
-  renderTask = page.render({ canvasContext: ctx, transform, viewport });
+  const task = page.render({ canvasContext: context, transform, viewport });
+  renderTasks.push(task);
   try {
-    await renderTask.promise;
+    await task.promise;
   } catch (error) {
     if (error?.name !== 'RenderingCancelledException') throw error;
   }
+}
+
+async function renderSpread() {
+  if (!pdfDoc) return;
+  const serial = ++renderSerial;
+  cancelRenders();
+
+  currentPage = Math.min(Math.max(currentPage, 1), pdfDoc.numPages);
+  const firstPage = await pdfDoc.getPage(currentPage);
+  let targetScale = scale;
+
+  if (fitWidthMode) {
+    const baseViewport = firstPage.getViewport({ scale: 1 });
+    const isNarrow = window.innerWidth <= 850;
+    const outerPadding = isNarrow ? 24 : 48;
+    const gap = isNarrow ? 12 : 20;
+    const availableWidth = Math.max(280, els.viewport.clientWidth - outerPadding);
+    const pagesAcross = isNarrow ? 1 : 2;
+    const pageWidth = pagesAcross === 2 ? (availableWidth - gap) / 2 : availableWidth;
+    targetScale = Math.min(2.3, pageWidth / baseViewport.width);
+    scale = targetScale;
+  }
+
+  await Promise.all([
+    renderCanvas(currentPage, els.canvases[0], contexts[0], targetScale, serial),
+    renderCanvas(currentPage + 1, els.canvases[1], contexts[1], targetScale, serial)
+  ]);
   if (serial !== renderSerial) return;
 
   els.loading.style.display = 'none';
-  els.canvas.style.display = 'inline-block';
+  els.spread.style.display = 'flex';
   els.pageInput.value = currentPage;
-  els.pageCount.textContent = `/ ${pdfDoc.numPages}`;
+  els.pageCount.textContent = `/ ${pdfDoc.numPages}（${currentPage}-${Math.min(currentPage + 1, pdfDoc.numPages)}表示）`;
   els.prevPage.disabled = currentPage <= 1;
-  els.nextPage.disabled = currentPage >= pdfDoc.numPages;
+  els.nextPage.disabled = currentPage + 1 >= pdfDoc.numPages;
   els.zoomLabel.textContent = `${Math.round(scale * 100)}%`;
   updateUnitInfo();
   renderToc();
@@ -189,7 +218,8 @@ function goToPage(page) {
   if (!pdfDoc) return;
   currentPage = Math.min(Math.max(Math.trunc(page), 1), pdfDoc.numPages);
   els.viewport.scrollTop = 0;
-  renderPage().catch(showError);
+  els.viewport.scrollLeft = 0;
+  renderSpread().catch(showError);
 }
 
 function goToRelativeUnit(offset) {
@@ -221,23 +251,23 @@ document.querySelectorAll('.filter-chip').forEach(button => {
     renderToc();
   });
 });
-els.prevPage.addEventListener('click', () => goToPage(currentPage - 1));
-els.nextPage.addEventListener('click', () => goToPage(currentPage + 1));
+els.prevPage.addEventListener('click', () => goToPage(currentPage - 2));
+els.nextPage.addEventListener('click', () => goToPage(currentPage + 2));
 els.prevUnit.addEventListener('click', () => goToRelativeUnit(-1));
 els.nextUnit.addEventListener('click', () => goToRelativeUnit(1));
 els.pageInput.addEventListener('change', () => goToPage(Number(els.pageInput.value)));
-els.zoomOut.addEventListener('click', () => { fitWidthMode = false; scale = Math.max(0.45, scale - 0.15); renderPage().catch(showError); });
-els.zoomIn.addEventListener('click', () => { fitWidthMode = false; scale = Math.min(3, scale + 0.15); renderPage().catch(showError); });
-els.fitWidth.addEventListener('click', () => { fitWidthMode = true; renderPage().catch(showError); });
+els.zoomOut.addEventListener('click', () => { fitWidthMode = false; scale = Math.max(0.35, scale - 0.1); renderSpread().catch(showError); });
+els.zoomIn.addEventListener('click', () => { fitWidthMode = false; scale = Math.min(3, scale + 0.1); renderSpread().catch(showError); });
+els.fitWidth.addEventListener('click', () => { fitWidthMode = true; renderSpread().catch(showError); });
 els.menuButton.addEventListener('click', () => els.sidebar.classList.toggle('open'));
 window.addEventListener('resize', () => {
   clearTimeout(window.__resizeTimer);
-  window.__resizeTimer = setTimeout(() => { if (fitWidthMode) renderPage().catch(showError); }, 150);
+  window.__resizeTimer = setTimeout(() => { if (fitWidthMode) renderSpread().catch(showError); }, 150);
 });
 window.addEventListener('keydown', event => {
   if (event.target.matches('input')) return;
-  if (event.key === 'ArrowLeft') goToPage(currentPage - 1);
-  if (event.key === 'ArrowRight') goToPage(currentPage + 1);
+  if (event.key === 'ArrowLeft') goToPage(currentPage - 2);
+  if (event.key === 'ArrowRight') goToPage(currentPage + 2);
   if (event.key === '/') { event.preventDefault(); els.search.focus(); }
 });
 
@@ -251,7 +281,7 @@ async function init() {
   pdfDoc = loadedPdf;
   readInitialState();
   renderToc();
-  await renderPage();
+  await renderSpread();
 }
 
 init().catch(showError);

@@ -55,7 +55,10 @@
 
       <div id="pdfViewport" class="pdf-viewport">
         <div id="loadingMessage" class="loading-message">PDFを読み込んでいます...</div>
-        <canvas id="pdfCanvas" aria-label="PDFページ"></canvas>
+        <div id="pdfSpread" class="pdf-spread" aria-label="PDF見開き表示">
+          <canvas id="pdfCanvasLeft" class="pdf-canvas" aria-label="PDF左ページ"></canvas>
+          <canvas id="pdfCanvasRight" class="pdf-canvas" aria-label="PDF右ページ"></canvas>
+        </div>
       </div>
     </section>
   </main>
