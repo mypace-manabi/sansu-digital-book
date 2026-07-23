@@ -3,7 +3,7 @@ import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
 
-const DATA_URL = './data/contents.json';
+const DATA_URL = './data/contents.json?v=9';
 
 const els = {
   canvases: [
@@ -43,7 +43,7 @@ let currentPdfUrl = '';
 let contents = [];
 let currentPage = 3;
 let currentUnitId = '';
-let currentGrade = 'C';
+let currentGrade = ''; // 現在表示中のPDFのグレード
 let scale = 1.05;
 let fitWidthMode = true;
 let currentTypeFilter = 'all';
@@ -84,8 +84,22 @@ function getVisibleUnits() {
 }
 
 function getNavigationUnits() {
+  return getVisibleUnits();
+}
+
+async function syncSelectionToFilters() {
   const visible = getVisibleUnits();
-  return visible.length ? visible : contents;
+  renderToc();
+
+  if (!visible.length) {
+    updateUnitInfo(null);
+    return;
+  }
+
+  const currentStillVisible = visible.some(item => item.id === currentUnitId);
+  if (!currentStillVisible) {
+    await goToUnit(visible[0]);
+  }
 }
 
 function setUrlState() {
@@ -111,14 +125,14 @@ function readInitialUnit() {
   return { unit, page: unit.startPage };
 }
 
-function updateUnitInfo() {
-  const unit = getUnitForPage(currentPage);
+function updateUnitInfo(explicitUnit) {
+  const unit = explicitUnit === null ? null : (explicitUnit || getUnitForPage(currentPage));
   if (!unit) {
-    els.unitBadge.textContent = `${currentGrade}案内`;
-    els.unitTitle.textContent = currentPage <= 2 ? '目次・白紙ページ' : '案内ページ';
-    els.unitSummary.textContent = '左側の検索目次から単元を選択してください。';
+    els.unitBadge.textContent = '';
+    els.unitTitle.textContent = '単元を選択してください';
+    els.unitSummary.textContent = '左側の目次から単元を選択すると、概要と該当ページを表示します。';
     els.unitKeywords.innerHTML = '';
-    currentUnitId = '';
+    if (explicitUnit === null) currentUnitId = '';
   } else {
     currentUnitId = unit.id;
     els.unitBadge.textContent = unit.code;
@@ -145,7 +159,7 @@ function renderToc() {
 
   if (!filtered.length) {
     els.tocList.innerHTML = '<div class="empty-result">該当する単元がありません。<br>別の条件で検索してください。</div>';
-    updateUnitInfo();
+    updateUnitInfo(null);
     return;
   }
 
@@ -295,20 +309,20 @@ els.clearSearch.addEventListener('click', () => {
 });
 
 document.querySelectorAll('.grade-chip').forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', async () => {
     document.querySelectorAll('.grade-chip').forEach(chip => chip.classList.remove('active'));
     button.classList.add('active');
     currentGradeFilter = button.dataset.grade;
-    renderToc();
+    await syncSelectionToFilters();
   });
 });
 
 document.querySelectorAll('.type-chip').forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', async () => {
     document.querySelectorAll('.type-chip').forEach(chip => chip.classList.remove('active'));
     button.classList.add('active');
     currentTypeFilter = button.dataset.filter;
-    renderToc();
+    await syncSelectionToFilters();
   });
 });
 
@@ -349,7 +363,13 @@ window.addEventListener('keydown', event => {
 });
 
 async function init() {
-  const contentsResponse = await fetch(DATA_URL);
+  currentGradeFilter = 'all';
+  currentTypeFilter = 'all';
+  document.querySelectorAll('.grade-chip, .type-chip').forEach(chip => chip.classList.remove('active'));
+  document.querySelector('.grade-chip[data-grade="all"]').classList.add('active');
+  document.querySelector('.type-chip[data-filter="all"]').classList.add('active');
+
+  const contentsResponse = await fetch(DATA_URL, { cache: 'no-store' });
   if (!contentsResponse.ok) throw new Error('目次データを読み込めません。');
   contents = await contentsResponse.json();
   const initial = readInitialUnit();
