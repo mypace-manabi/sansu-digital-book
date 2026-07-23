@@ -185,3 +185,34 @@ button { cursor: pointer; }
   .pdf-viewport { padding: 12px; }
   .pdf-spread { gap: 12px; }
 }
+
+/* v8: グレード切替とツールバーの折り返し防止 */
+.filter-label {
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+.grade-filter-row,
+.type-filter-row {
+  margin-top: 0;
+}
+.grade-filter-row .filter-chip {
+  min-width: 38px;
+}
+.toolbar {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.toolbar > * {
+  flex: 0 0 auto;
+}
+.toolbar-button,
+.fit-width-button,
+.page-control,
+#pageCountLabel {
+  white-space: nowrap;
+}

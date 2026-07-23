@@ -1,25 +1,1816 @@
 [
-  {"id":"f18","code":"F18級","type":"basic","title":"円の面積①","startPage":3,"endPage":4,"keywords":["円","面積","半径","直径","円周率","3.14"],"summary":"円の面積を「半径×半径×円周率」で求め、半円や4分の1円にも適用します。"},
-  {"id":"fp1","code":"プラスF☆1","type":"plus","title":"円の面積②","startPage":5,"endPage":6,"keywords":["円","複合図形","色部分","まわりの長さ","面積"],"summary":"円を組み合わせた図形について、色部分の面積と周の長さを分解して求めます。"},
-  {"id":"fp2","code":"プラスF☆2","type":"plus","title":"文字と式","startPage":7,"endPage":8,"keywords":["文字式","x","y","代入","関係式"],"summary":"数量をxやyで表し、値を代入して式の値を求めます。"},
-  {"id":"f17","code":"F17級","type":"basic","title":"分数のかけ算①","startPage":9,"endPage":10,"keywords":["分数","かけ算","整数","約分","0"],"summary":"分数と整数のかけ算を、分子に整数をかける方法で計算します。"},
-  {"id":"f16","code":"F16級","type":"basic","title":"時間の単位②","startPage":11,"endPage":12,"keywords":["時間","分","秒","分数","単位換算"],"summary":"時間・分・秒を分数を用いて換算します。"},
-  {"id":"f15","code":"F15級","type":"basic","title":"分数のかけ算②","startPage":13,"endPage":14,"keywords":["分数","かけ算","分母","分子","約分"],"summary":"分数どうしのかけ算を、分母どうし・分子どうしをかけて求めます。"},
-  {"id":"f14","code":"F14級","type":"basic","title":"分数のかけ算③","startPage":15,"endPage":16,"keywords":["帯分数","仮分数","かけ算","約分"],"summary":"帯分数を仮分数に直してから、分数のかけ算を行います。"},
-  {"id":"f13","code":"F13級","type":"basic","title":"分数のかけ算④","startPage":17,"endPage":18,"keywords":["連続したかけ算","帯分数","仮分数","約分"],"summary":"複数の分数・整数のかけ算を一度に計算し、途中で約分します。"},
-  {"id":"f12","code":"F12級","type":"basic","title":"分数のわり算①","startPage":19,"endPage":20,"keywords":["分数","わり算","整数","帯分数","仮分数"],"summary":"分数を整数でわる計算を、分母に整数をかける方法で求めます。"},
-  {"id":"f11","code":"F11級","type":"basic","title":"分数のわり算②","startPage":21,"endPage":22,"keywords":["分数","わり算","逆数","約分"],"summary":"わる数を逆数にして、かけ算に直して計算します。"},
-  {"id":"f10","code":"F10級","type":"basic","title":"分数のわり算③","startPage":23,"endPage":24,"keywords":["帯分数","仮分数","逆数","分数のわり算"],"summary":"帯分数を含む分数のわり算を、仮分数と逆数を使って計算します。"},
-  {"id":"f09","code":"F9級","type":"basic","title":"分数のかけ算とわり算","startPage":25,"endPage":26,"keywords":["分数","かけ算","わり算","混合計算","逆数"],"summary":"かけ算とわり算が混じった分数計算を、かけ算に統一して求めます。"},
-  {"id":"fp3","code":"プラスF☆3","type":"plus","title":"割合⑥","startPage":27,"endPage":28,"keywords":["割合","分数","もとにする量","くらべられる量"],"summary":"割合を分数で表し、もとにする量・くらべられる量を求めます。"},
-  {"id":"f08","code":"F8級","type":"basic","title":"角柱・円柱の体積","startPage":29,"endPage":30,"keywords":["角柱","円柱","体積","底面積","高さ","円周率"],"summary":"角柱と円柱の体積を「底面積×高さ」で求めます。"},
-  {"id":"f07","code":"F7級","type":"basic","title":"比①","startPage":31,"endPage":32,"keywords":["比","比の値","簡単な比","小数","分数"],"summary":"比の値を求め、整数・小数・分数の比を簡単にします。"},
-  {"id":"f06","code":"F6級","type":"basic","title":"比②","startPage":33,"endPage":34,"keywords":["等しい比","比例式","空欄","比"],"summary":"同じ数をかけたりわったりして等しい比を作り、空欄を求めます。"},
-  {"id":"fp4","code":"プラスF☆4","type":"plus","title":"比③","startPage":35,"endPage":36,"keywords":["比","比で分ける","按分","人数","長さ"],"summary":"比の関係から数量を求めたり、全体を指定された比で分けたりします。"},
-  {"id":"fp5","code":"プラスF☆5","type":"plus","title":"拡大図と縮図","startPage":37,"endPage":38,"keywords":["拡大図","縮図","縮尺","影","地図","比"],"summary":"相似な図形の比や縮尺を使って、実際の長さを求めます。"},
-  {"id":"f05","code":"F5級","type":"basic","title":"比例","startPage":39,"endPage":40,"keywords":["比例","x","y","表","式","決まった値"],"summary":"比例の表と式 y=(決まった値)×x を使って値を求めます。"},
-  {"id":"f04","code":"F4級","type":"basic","title":"反比例","startPage":41,"endPage":42,"keywords":["反比例","x","y","表","式","決まった値"],"summary":"反比例の表と式 y=(決まった値)÷x を使って値を求めます。"},
-  {"id":"f03","code":"F3級","type":"basic","title":"場合の数","startPage":43,"endPage":44,"keywords":["場合の数","樹形図","並べ方","組み合わせ","カード"],"summary":"樹形図や組み合わせの列挙を使って、場合の数を求めます。"},
-  {"id":"f02","code":"F2級","type":"basic","title":"代表値①","startPage":45,"endPage":46,"keywords":["平均値","中央値","最頻値","資料","データ"],"summary":"資料から平均値・中央値・最頻値を求めます。"},
-  {"id":"f01","code":"F1級","type":"basic","title":"代表値②","startPage":47,"endPage":48,"keywords":["度数分布表","階級","度数","資料","データ"],"summary":"資料を階級に分けて度数分布表に整理し、該当する階級を読み取ります。"}
+  {
+    "id": "c-001",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C21級",
+    "type": "basic",
+    "title": "時間のたんい①",
+    "startPage": 3,
+    "endPage": 4,
+    "keywords": [
+      "時間",
+      "分",
+      "秒",
+      "単位換算"
+    ],
+    "summary": "時間・分・秒の関係を使って単位を換算します。"
+  },
+  {
+    "id": "c-002",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C20級",
+    "type": "basic",
+    "title": "時こくと時間",
+    "startPage": 5,
+    "endPage": 6,
+    "keywords": [
+      "時刻",
+      "時間",
+      "前後",
+      "経過時間"
+    ],
+    "summary": "時刻の前後や、2つの時刻の間の時間を求めます。"
+  },
+  {
+    "id": "c-003",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C19級",
+    "type": "basic",
+    "title": "長さのたんい",
+    "startPage": 7,
+    "endPage": 8,
+    "keywords": [
+      "km",
+      "m",
+      "cm",
+      "mm",
+      "単位換算"
+    ],
+    "summary": "長さの単位を換算します。"
+  },
+  {
+    "id": "c-004",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C18級",
+    "type": "basic",
+    "title": "九九を使ったわり算",
+    "startPage": 9,
+    "endPage": 10,
+    "keywords": [
+      "わり算",
+      "九九",
+      "商"
+    ],
+    "summary": "九九を使って、あまりのないわり算を求めます。"
+  },
+  {
+    "id": "c-005",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C17級",
+    "type": "basic",
+    "title": "3けた・4けたのたし算",
+    "startPage": 11,
+    "endPage": 12,
+    "keywords": [
+      "筆算",
+      "たし算",
+      "くり上がり"
+    ],
+    "summary": "3けた・4けたのたし算を筆算で計算します。"
+  },
+  {
+    "id": "c-006",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C16級",
+    "type": "basic",
+    "title": "3けた・4けたのひき算",
+    "startPage": 13,
+    "endPage": 14,
+    "keywords": [
+      "筆算",
+      "ひき算",
+      "くり下がり"
+    ],
+    "summary": "3けた・4けたのひき算を筆算で計算します。"
+  },
+  {
+    "id": "c-007",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "プラスC☆1",
+    "type": "plus",
+    "title": "2けたのたし算の暗算",
+    "startPage": 15,
+    "endPage": 16,
+    "keywords": [
+      "暗算",
+      "たし算",
+      "数の分解"
+    ],
+    "summary": "数を分けて2けたのたし算を暗算します。"
+  },
+  {
+    "id": "c-008",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "プラスC☆2",
+    "type": "plus",
+    "title": "2けたのひき算の暗算",
+    "startPage": 17,
+    "endPage": 18,
+    "keywords": [
+      "暗算",
+      "ひき算",
+      "数の分解"
+    ],
+    "summary": "数を分けて2けたのひき算を暗算します。"
+  },
+  {
+    "id": "c-009",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C15級",
+    "type": "basic",
+    "title": "あまりのあるわり算",
+    "startPage": 19,
+    "endPage": 20,
+    "keywords": [
+      "わり算",
+      "あまり",
+      "九九"
+    ],
+    "summary": "あまりのあるわり算を九九を使って求めます。"
+  },
+  {
+    "id": "c-010",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C14級",
+    "type": "basic",
+    "title": "大きい数",
+    "startPage": 21,
+    "endPage": 22,
+    "keywords": [
+      "10倍",
+      "100倍",
+      "1000倍",
+      "位"
+    ],
+    "summary": "大きい数の位と、10倍・100倍・1000倍を学びます。"
+  },
+  {
+    "id": "c-011",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C13級",
+    "type": "basic",
+    "title": "かけ算の筆算①",
+    "startPage": 23,
+    "endPage": 24,
+    "keywords": [
+      "かけ算",
+      "筆算",
+      "2けた"
+    ],
+    "summary": "2けたの数に1けたの数をかける筆算を学びます。"
+  },
+  {
+    "id": "c-012",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C12級",
+    "type": "basic",
+    "title": "かけ算の筆算②",
+    "startPage": 25,
+    "endPage": 26,
+    "keywords": [
+      "かけ算",
+      "筆算",
+      "3けた",
+      "4けた"
+    ],
+    "summary": "3けた・4けたの数に1けたの数をかけます。"
+  },
+  {
+    "id": "c-013",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C11級",
+    "type": "basic",
+    "title": "小数のせいしつ①",
+    "startPage": 27,
+    "endPage": 28,
+    "keywords": [
+      "小数",
+      "0.1",
+      "位"
+    ],
+    "summary": "0.1がいくつ集まった数かを考えます。"
+  },
+  {
+    "id": "c-014",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C10級",
+    "type": "basic",
+    "title": "小数のたし算①",
+    "startPage": 29,
+    "endPage": 30,
+    "keywords": [
+      "小数",
+      "たし算",
+      "筆算"
+    ],
+    "summary": "小数点をそろえて小数のたし算をします。"
+  },
+  {
+    "id": "c-015",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C9級",
+    "type": "basic",
+    "title": "小数のひき算①",
+    "startPage": 31,
+    "endPage": 32,
+    "keywords": [
+      "小数",
+      "ひき算",
+      "筆算"
+    ],
+    "summary": "小数点をそろえて小数のひき算をします。"
+  },
+  {
+    "id": "c-016",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C8級",
+    "type": "basic",
+    "title": "重さのたんい",
+    "startPage": 33,
+    "endPage": 34,
+    "keywords": [
+      "t",
+      "kg",
+      "g",
+      "mg",
+      "単位換算"
+    ],
+    "summary": "重さの単位を換算します。"
+  },
+  {
+    "id": "c-017",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C7級",
+    "type": "basic",
+    "title": "分数のせいしつ①",
+    "startPage": 35,
+    "endPage": 36,
+    "keywords": [
+      "分数",
+      "分子",
+      "分母",
+      "小数"
+    ],
+    "summary": "分数の意味と、小数との関係を学びます。"
+  },
+  {
+    "id": "c-018",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C6級",
+    "type": "basic",
+    "title": "分数のたし算①",
+    "startPage": 37,
+    "endPage": 38,
+    "keywords": [
+      "分数",
+      "たし算",
+      "同分母"
+    ],
+    "summary": "分母が同じ分数のたし算をします。"
+  },
+  {
+    "id": "c-019",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C5級",
+    "type": "basic",
+    "title": "分数のひき算①",
+    "startPage": 39,
+    "endPage": 40,
+    "keywords": [
+      "分数",
+      "ひき算",
+      "同分母"
+    ],
+    "summary": "分母が同じ分数のひき算をします。"
+  },
+  {
+    "id": "c-020",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C4級",
+    "type": "basic",
+    "title": "□をもとめる①",
+    "startPage": 41,
+    "endPage": 42,
+    "keywords": [
+      "逆算",
+      "四則計算",
+      "空欄"
+    ],
+    "summary": "四則計算の関係を使って□の数を求めます。"
+  },
+  {
+    "id": "c-021",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C3級",
+    "type": "basic",
+    "title": "かけ算の筆算③",
+    "startPage": 43,
+    "endPage": 44,
+    "keywords": [
+      "かけ算",
+      "筆算",
+      "2けた×2けた"
+    ],
+    "summary": "2けたの数どうしのかけ算を筆算で求めます。"
+  },
+  {
+    "id": "c-022",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C2級",
+    "type": "basic",
+    "title": "かけ算の筆算④",
+    "startPage": 45,
+    "endPage": 46,
+    "keywords": [
+      "かけ算",
+      "筆算",
+      "3けた×2けた"
+    ],
+    "summary": "3けたの数に2けたの数をかけます。"
+  },
+  {
+    "id": "c-023",
+    "grade": "C",
+    "pdf": "./pdf/sansu_C.pdf",
+    "code": "C1級",
+    "type": "basic",
+    "title": "かけ算の暗算",
+    "startPage": 47,
+    "endPage": 48,
+    "keywords": [
+      "暗算",
+      "かけ算",
+      "くり上がり"
+    ],
+    "summary": "かけ算の筆算を頭の中で行います。"
+  },
+  {
+    "id": "d-024",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D23級",
+    "type": "basic",
+    "title": "三角形と角",
+    "startPage": 3,
+    "endPage": 4,
+    "keywords": [
+      "角度",
+      "直線",
+      "対頂角",
+      "三角定規"
+    ],
+    "summary": "直線や三角定規を使って角度を求めます。"
+  },
+  {
+    "id": "d-025",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D22級",
+    "type": "basic",
+    "title": "わり算の筆算①",
+    "startPage": 5,
+    "endPage": 6,
+    "keywords": [
+      "わり算",
+      "筆算",
+      "商",
+      "あまり"
+    ],
+    "summary": "2けた÷1けたの筆算を学びます。"
+  },
+  {
+    "id": "d-026",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D21級",
+    "type": "basic",
+    "title": "わり算の筆算②",
+    "startPage": 7,
+    "endPage": 8,
+    "keywords": [
+      "わり算",
+      "筆算",
+      "3けた"
+    ],
+    "summary": "3けた÷1けたの筆算を学びます。"
+  },
+  {
+    "id": "d-027",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆1",
+    "type": "plus",
+    "title": "わり算の暗算",
+    "startPage": 9,
+    "endPage": 10,
+    "keywords": [
+      "わり算",
+      "暗算",
+      "位"
+    ],
+    "summary": "大きい位からわり算を暗算します。"
+  },
+  {
+    "id": "d-028",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D20級",
+    "type": "basic",
+    "title": "平行と平行四辺形",
+    "startPage": 11,
+    "endPage": 12,
+    "keywords": [
+      "平行",
+      "角度",
+      "平行四辺形"
+    ],
+    "summary": "平行線の角と平行四辺形の性質を学びます。"
+  },
+  {
+    "id": "d-029",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D19級",
+    "type": "basic",
+    "title": "大きい数のかけ算",
+    "startPage": 13,
+    "endPage": 14,
+    "keywords": [
+      "億",
+      "兆",
+      "10倍",
+      "大きい数"
+    ],
+    "summary": "億や兆を含む大きい数のかけ算を学びます。"
+  },
+  {
+    "id": "d-030",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆2",
+    "type": "plus",
+    "title": "かけ算の筆算⑤",
+    "startPage": 15,
+    "endPage": 16,
+    "keywords": [
+      "かけ算",
+      "筆算",
+      "3けた×3けた"
+    ],
+    "summary": "3けたの数どうしのかけ算を筆算で求めます。"
+  },
+  {
+    "id": "d-031",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D18級",
+    "type": "basic",
+    "title": "わり算の筆算③",
+    "startPage": 17,
+    "endPage": 18,
+    "keywords": [
+      "わり算",
+      "2けたでわる",
+      "仮商"
+    ],
+    "summary": "2けたの数でわる筆算の商を見積もります。"
+  },
+  {
+    "id": "d-032",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D17級",
+    "type": "basic",
+    "title": "わり算の筆算④",
+    "startPage": 19,
+    "endPage": 20,
+    "keywords": [
+      "わり算",
+      "筆算",
+      "3けた÷2けた"
+    ],
+    "summary": "3けた÷2けたの筆算を学びます。"
+  },
+  {
+    "id": "d-033",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D16級",
+    "type": "basic",
+    "title": "わり算の筆算⑤",
+    "startPage": 21,
+    "endPage": 22,
+    "keywords": [
+      "わり算",
+      "筆算",
+      "4けた"
+    ],
+    "summary": "4けたの数を2けたの数でわります。"
+  },
+  {
+    "id": "d-034",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆3",
+    "type": "plus",
+    "title": "わり算の筆算⑥",
+    "startPage": 23,
+    "endPage": 24,
+    "keywords": [
+      "わり算",
+      "3けたでわる",
+      "仮商"
+    ],
+    "summary": "3けたの数でわる筆算を学びます。"
+  },
+  {
+    "id": "d-035",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D15級",
+    "type": "basic",
+    "title": "大きい数のわり算",
+    "startPage": 25,
+    "endPage": 26,
+    "keywords": [
+      "わり算",
+      "0を消す",
+      "大きい数"
+    ],
+    "summary": "末尾の0を同じ数だけ消して計算します。"
+  },
+  {
+    "id": "d-036",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D14級",
+    "type": "basic",
+    "title": "割合①",
+    "startPage": 27,
+    "endPage": 28,
+    "keywords": [
+      "倍",
+      "割合",
+      "文章題"
+    ],
+    "summary": "整数倍の関係から数量を求めます。"
+  },
+  {
+    "id": "d-037",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆4",
+    "type": "plus",
+    "title": "がい数",
+    "startPage": 29,
+    "endPage": 30,
+    "keywords": [
+      "概数",
+      "四捨五入",
+      "以上",
+      "未満"
+    ],
+    "summary": "四捨五入で概数と範囲を求めます。"
+  },
+  {
+    "id": "d-038",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D13級",
+    "type": "basic",
+    "title": "計算のきまり",
+    "startPage": 31,
+    "endPage": 32,
+    "keywords": [
+      "計算順序",
+      "かっこ",
+      "四則計算"
+    ],
+    "summary": "かっこや乗除を優先する計算順序を学びます。"
+  },
+  {
+    "id": "d-039",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆5",
+    "type": "plus",
+    "title": "□を求める②",
+    "startPage": 33,
+    "endPage": 34,
+    "keywords": [
+      "逆算",
+      "トーナメント",
+      "かっこ"
+    ],
+    "summary": "複数の計算を逆算して□を求めます。"
+  },
+  {
+    "id": "d-040",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D12級",
+    "type": "basic",
+    "title": "正方形と長方形の面積",
+    "startPage": 35,
+    "endPage": 36,
+    "keywords": [
+      "面積",
+      "正方形",
+      "長方形"
+    ],
+    "summary": "正方形と長方形の面積を求めます。"
+  },
+  {
+    "id": "d-041",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆6",
+    "type": "plus",
+    "title": "いろいろな四角形の面積",
+    "startPage": 37,
+    "endPage": 38,
+    "keywords": [
+      "面積",
+      "複合図形",
+      "長方形"
+    ],
+    "summary": "複合図形を分けたり全体から引いたりして面積を求めます。"
+  },
+  {
+    "id": "d-042",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D11級",
+    "type": "basic",
+    "title": "小数のせいしつ②",
+    "startPage": 39,
+    "endPage": 40,
+    "keywords": [
+      "小数",
+      "10倍",
+      "100倍",
+      "0.001"
+    ],
+    "summary": "小数点の移動と小数の位を学びます。"
+  },
+  {
+    "id": "d-043",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D10級",
+    "type": "basic",
+    "title": "小数のたし算②",
+    "startPage": 41,
+    "endPage": 42,
+    "keywords": [
+      "小数",
+      "たし算",
+      "筆算"
+    ],
+    "summary": "小数第2位・第3位までのたし算をします。"
+  },
+  {
+    "id": "d-044",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D9級",
+    "type": "basic",
+    "title": "小数のひき算②",
+    "startPage": 43,
+    "endPage": 44,
+    "keywords": [
+      "小数",
+      "ひき算",
+      "筆算"
+    ],
+    "summary": "小数第2位までのひき算をします。"
+  },
+  {
+    "id": "d-045",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D8級",
+    "type": "basic",
+    "title": "小数のかけ算①",
+    "startPage": 45,
+    "endPage": 46,
+    "keywords": [
+      "小数",
+      "かけ算",
+      "筆算"
+    ],
+    "summary": "小数×整数の筆算を学びます。"
+  },
+  {
+    "id": "d-046",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D7級",
+    "type": "basic",
+    "title": "小数のわり算①",
+    "startPage": 47,
+    "endPage": 48,
+    "keywords": [
+      "小数",
+      "わり算",
+      "筆算",
+      "あまり"
+    ],
+    "summary": "小数÷整数の筆算とあまりを学びます。"
+  },
+  {
+    "id": "d-047",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D6級",
+    "type": "basic",
+    "title": "小数のわり算②",
+    "startPage": 49,
+    "endPage": 50,
+    "keywords": [
+      "小数",
+      "わり算",
+      "わりきれるまで"
+    ],
+    "summary": "0をつけてわりきれるまで計算します。"
+  },
+  {
+    "id": "d-048",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "プラスD☆7",
+    "type": "plus",
+    "title": "割合②",
+    "startPage": 51,
+    "endPage": 52,
+    "keywords": [
+      "小数倍",
+      "割合",
+      "文章題"
+    ],
+    "summary": "小数で表された倍の関係から数量を求めます。"
+  },
+  {
+    "id": "d-049",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D5級",
+    "type": "basic",
+    "title": "分数のせいしつ②",
+    "startPage": 53,
+    "endPage": 54,
+    "keywords": [
+      "真分数",
+      "仮分数",
+      "帯分数"
+    ],
+    "summary": "仮分数と帯分数を相互に直します。"
+  },
+  {
+    "id": "d-050",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D4級",
+    "type": "basic",
+    "title": "分数のたし算②",
+    "startPage": 55,
+    "endPage": 56,
+    "keywords": [
+      "分数",
+      "たし算",
+      "仮分数"
+    ],
+    "summary": "同分母の分数をたし、帯分数に直します。"
+  },
+  {
+    "id": "d-051",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D3級",
+    "type": "basic",
+    "title": "分数のたし算③",
+    "startPage": 57,
+    "endPage": 58,
+    "keywords": [
+      "帯分数",
+      "たし算",
+      "仮分数"
+    ],
+    "summary": "仮分数・帯分数を含むたし算をします。"
+  },
+  {
+    "id": "d-052",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D2級",
+    "type": "basic",
+    "title": "分数のひき算②",
+    "startPage": 59,
+    "endPage": 60,
+    "keywords": [
+      "帯分数",
+      "ひき算",
+      "くり下がり"
+    ],
+    "summary": "帯分数から分数をひく計算をします。"
+  },
+  {
+    "id": "d-053",
+    "grade": "D",
+    "pdf": "./pdf/sansu_D.pdf",
+    "code": "D1級",
+    "type": "basic",
+    "title": "分数のひき算③",
+    "startPage": 61,
+    "endPage": 62,
+    "keywords": [
+      "帯分数",
+      "ひき算",
+      "整数"
+    ],
+    "summary": "帯分数どうしや整数を含むひき算をします。"
+  },
+  {
+    "id": "e-054",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E30級",
+    "type": "basic",
+    "title": "体積①",
+    "startPage": 3,
+    "endPage": 4,
+    "keywords": [
+      "体積",
+      "立方体",
+      "直方体"
+    ],
+    "summary": "立方体と直方体の体積を求めます。"
+  },
+  {
+    "id": "e-055",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E29級",
+    "type": "basic",
+    "title": "体積②",
+    "startPage": 5,
+    "endPage": 6,
+    "keywords": [
+      "体積",
+      "複合立体",
+      "直方体"
+    ],
+    "summary": "立体を分けたり引いたりして体積を求めます。"
+  },
+  {
+    "id": "e-056",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E28級",
+    "type": "basic",
+    "title": "いろいろな体積の単位",
+    "startPage": 7,
+    "endPage": 8,
+    "keywords": [
+      "体積",
+      "L",
+      "mL",
+      "cm3",
+      "m3"
+    ],
+    "summary": "体積と容積の単位を換算します。"
+  },
+  {
+    "id": "e-057",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E27級",
+    "type": "basic",
+    "title": "小数のかけ算②",
+    "startPage": 9,
+    "endPage": 10,
+    "keywords": [
+      "小数",
+      "かけ算",
+      "小数点"
+    ],
+    "summary": "小数どうしのかけ算を筆算で求めます。"
+  },
+  {
+    "id": "e-058",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E26級",
+    "type": "basic",
+    "title": "小数のわり算③",
+    "startPage": 11,
+    "endPage": 12,
+    "keywords": [
+      "小数",
+      "わり算",
+      "小数点移動"
+    ],
+    "summary": "わる数を整数に直して小数のわり算をします。"
+  },
+  {
+    "id": "e-059",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E25級",
+    "type": "basic",
+    "title": "小数のわり算④",
+    "startPage": 13,
+    "endPage": 14,
+    "keywords": [
+      "小数÷小数",
+      "筆算",
+      "小数点移動"
+    ],
+    "summary": "小数どうしのわり算を筆算で求めます。"
+  },
+  {
+    "id": "e-060",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E24級",
+    "type": "basic",
+    "title": "小数のわり算⑤",
+    "startPage": 15,
+    "endPage": 16,
+    "keywords": [
+      "小数",
+      "わり算",
+      "あまり"
+    ],
+    "summary": "商の位を指定し、あまりも求めます。"
+  },
+  {
+    "id": "e-061",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E23級",
+    "type": "basic",
+    "title": "小数のわり算⑥",
+    "startPage": 17,
+    "endPage": 18,
+    "keywords": [
+      "小数÷小数",
+      "あまり",
+      "筆算"
+    ],
+    "summary": "小数どうしのわり算であまりを求めます。"
+  },
+  {
+    "id": "e-062",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "プラスE☆1",
+    "type": "plus",
+    "title": "小数のわり算⑦",
+    "startPage": 19,
+    "endPage": 20,
+    "keywords": [
+      "小数",
+      "わり算",
+      "四捨五入",
+      "概数"
+    ],
+    "summary": "商を四捨五入して概数で求めます。"
+  },
+  {
+    "id": "e-063",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E22級",
+    "type": "basic",
+    "title": "倍数と公倍数",
+    "startPage": 21,
+    "endPage": 22,
+    "keywords": [
+      "倍数",
+      "公倍数",
+      "最小公倍数"
+    ],
+    "summary": "倍数・公倍数・最小公倍数を学びます。"
+  },
+  {
+    "id": "e-064",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E21級",
+    "type": "basic",
+    "title": "最小公倍数",
+    "startPage": 23,
+    "endPage": 24,
+    "keywords": [
+      "最小公倍数",
+      "連除法"
+    ],
+    "summary": "連除法で最小公倍数を求めます。"
+  },
+  {
+    "id": "e-065",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E20級",
+    "type": "basic",
+    "title": "約数と公約数",
+    "startPage": 25,
+    "endPage": 26,
+    "keywords": [
+      "約数",
+      "公約数",
+      "最大公約数"
+    ],
+    "summary": "約数・公約数・最大公約数を学びます。"
+  },
+  {
+    "id": "e-066",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E19級",
+    "type": "basic",
+    "title": "最大公約数",
+    "startPage": 27,
+    "endPage": 28,
+    "keywords": [
+      "最大公約数",
+      "連除法"
+    ],
+    "summary": "連除法で最大公約数を求めます。"
+  },
+  {
+    "id": "e-067",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E18級",
+    "type": "basic",
+    "title": "分数の性質③",
+    "startPage": 29,
+    "endPage": 30,
+    "keywords": [
+      "分数",
+      "小数",
+      "わり算"
+    ],
+    "summary": "分数・小数・わり算の関係を学びます。"
+  },
+  {
+    "id": "e-068",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E17級",
+    "type": "basic",
+    "title": "分数の性質④",
+    "startPage": 31,
+    "endPage": 32,
+    "keywords": [
+      "倍分",
+      "約分",
+      "最大公約数"
+    ],
+    "summary": "倍分と約分を学びます。"
+  },
+  {
+    "id": "e-069",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E16級",
+    "type": "basic",
+    "title": "分数の性質⑤",
+    "startPage": 33,
+    "endPage": 34,
+    "keywords": [
+      "通分",
+      "大小比較",
+      "最小公倍数"
+    ],
+    "summary": "通分して分数の大小を比べます。"
+  },
+  {
+    "id": "e-070",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E15級",
+    "type": "basic",
+    "title": "分数のたし算④",
+    "startPage": 35,
+    "endPage": 36,
+    "keywords": [
+      "異分母",
+      "たし算",
+      "通分"
+    ],
+    "summary": "分母が異なる分数のたし算をします。"
+  },
+  {
+    "id": "e-071",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E14級",
+    "type": "basic",
+    "title": "分数のひき算④",
+    "startPage": 37,
+    "endPage": 38,
+    "keywords": [
+      "異分母",
+      "ひき算",
+      "通分"
+    ],
+    "summary": "分母が異なる分数のひき算をします。"
+  },
+  {
+    "id": "e-072",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E13級",
+    "type": "basic",
+    "title": "分数のたし算とひき算①",
+    "startPage": 39,
+    "endPage": 40,
+    "keywords": [
+      "分数",
+      "混合計算",
+      "通分"
+    ],
+    "summary": "分数のたし算とひき算の混合計算をします。"
+  },
+  {
+    "id": "e-073",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "プラスE☆2",
+    "type": "plus",
+    "title": "分数のたし算とひき算②",
+    "startPage": 41,
+    "endPage": 42,
+    "keywords": [
+      "分数",
+      "小数",
+      "混合計算"
+    ],
+    "summary": "小数を分数に直して計算します。"
+  },
+  {
+    "id": "e-074",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "プラスE☆3",
+    "type": "plus",
+    "title": "平均",
+    "startPage": 43,
+    "endPage": 44,
+    "keywords": [
+      "平均",
+      "合計",
+      "個数"
+    ],
+    "summary": "数量の平均や、複数集団全体の平均を求めます。"
+  },
+  {
+    "id": "e-075",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E12級",
+    "type": "basic",
+    "title": "速さ①",
+    "startPage": 45,
+    "endPage": 46,
+    "keywords": [
+      "速さ",
+      "道のり",
+      "時間",
+      "みはじ"
+    ],
+    "summary": "速さ・道のり・時間の関係を学びます。"
+  },
+  {
+    "id": "e-076",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E11級",
+    "type": "basic",
+    "title": "速さ②",
+    "startPage": 47,
+    "endPage": 48,
+    "keywords": [
+      "速さ",
+      "単位換算",
+      "分速",
+      "秒速"
+    ],
+    "summary": "単位をそろえて速さの問題を解きます。"
+  },
+  {
+    "id": "e-077",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E10級",
+    "type": "basic",
+    "title": "平行四辺形の面積",
+    "startPage": 49,
+    "endPage": 50,
+    "keywords": [
+      "面積",
+      "平行四辺形",
+      "底辺",
+      "高さ"
+    ],
+    "summary": "平行四辺形の面積を求めます。"
+  },
+  {
+    "id": "e-078",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E9級",
+    "type": "basic",
+    "title": "三角形の面積",
+    "startPage": 51,
+    "endPage": 52,
+    "keywords": [
+      "面積",
+      "三角形",
+      "底辺",
+      "高さ"
+    ],
+    "summary": "三角形の面積を求めます。"
+  },
+  {
+    "id": "e-079",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E8級",
+    "type": "basic",
+    "title": "台形・ひし形の面積",
+    "startPage": 53,
+    "endPage": 54,
+    "keywords": [
+      "面積",
+      "台形",
+      "ひし形",
+      "対角線"
+    ],
+    "summary": "台形・ひし形・正方形の面積を求めます。"
+  },
+  {
+    "id": "e-080",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E7級",
+    "type": "basic",
+    "title": "多角形と角①",
+    "startPage": 55,
+    "endPage": 56,
+    "keywords": [
+      "三角形",
+      "内角",
+      "外角"
+    ],
+    "summary": "三角形の内角と外角を使って角度を求めます。"
+  },
+  {
+    "id": "e-081",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E6級",
+    "type": "basic",
+    "title": "多角形と角②",
+    "startPage": 57,
+    "endPage": 58,
+    "keywords": [
+      "二等辺三角形",
+      "正三角形",
+      "角度"
+    ],
+    "summary": "二等辺三角形・正三角形の性質を使います。"
+  },
+  {
+    "id": "e-082",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E5級",
+    "type": "basic",
+    "title": "多角形と角③",
+    "startPage": 59,
+    "endPage": 60,
+    "keywords": [
+      "多角形",
+      "内角の和",
+      "四角形",
+      "五角形"
+    ],
+    "summary": "多角形の内角の和から角度を求めます。"
+  },
+  {
+    "id": "e-083",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E4級",
+    "type": "basic",
+    "title": "割合③",
+    "startPage": 61,
+    "endPage": 62,
+    "keywords": [
+      "割合",
+      "もとにする量",
+      "くらべられる量"
+    ],
+    "summary": "小数で表す割合の3つの量を求めます。"
+  },
+  {
+    "id": "e-084",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E3級",
+    "type": "basic",
+    "title": "割合④",
+    "startPage": 63,
+    "endPage": 64,
+    "keywords": [
+      "歩合",
+      "百分率",
+      "小数",
+      "分数"
+    ],
+    "summary": "小数・分数・歩合・百分率を相互に直します。"
+  },
+  {
+    "id": "e-085",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E2級",
+    "type": "basic",
+    "title": "割合⑤",
+    "startPage": 65,
+    "endPage": 66,
+    "keywords": [
+      "歩合",
+      "百分率",
+      "割合",
+      "文章題"
+    ],
+    "summary": "歩合や百分率を小数に直して計算します。"
+  },
+  {
+    "id": "e-086",
+    "grade": "E",
+    "pdf": "./pdf/sansu_E.pdf",
+    "code": "E1級",
+    "type": "basic",
+    "title": "円のまわりの長さ",
+    "startPage": 67,
+    "endPage": 68,
+    "keywords": [
+      "円周",
+      "直径",
+      "半径",
+      "円周率"
+    ],
+    "summary": "円のまわりの長さを求めます。"
+  },
+  {
+    "id": "f-087",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F18級",
+    "type": "basic",
+    "title": "円の面積①",
+    "startPage": 3,
+    "endPage": 4,
+    "keywords": [
+      "円",
+      "面積",
+      "半径",
+      "直径",
+      "円周率",
+      "3.14"
+    ],
+    "summary": "円の面積を「半径×半径×円周率」で求め、半円や4分の1円にも適用します。"
+  },
+  {
+    "id": "f-088",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "プラスF☆1",
+    "type": "plus",
+    "title": "円の面積②",
+    "startPage": 5,
+    "endPage": 6,
+    "keywords": [
+      "円",
+      "複合図形",
+      "色部分",
+      "まわりの長さ",
+      "面積"
+    ],
+    "summary": "円を組み合わせた図形について、色部分の面積と周の長さを分解して求めます。"
+  },
+  {
+    "id": "f-089",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "プラスF☆2",
+    "type": "plus",
+    "title": "文字と式",
+    "startPage": 7,
+    "endPage": 8,
+    "keywords": [
+      "文字式",
+      "x",
+      "y",
+      "代入",
+      "関係式"
+    ],
+    "summary": "数量をxやyで表し、値を代入して式の値を求めます。"
+  },
+  {
+    "id": "f-090",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F17級",
+    "type": "basic",
+    "title": "分数のかけ算①",
+    "startPage": 9,
+    "endPage": 10,
+    "keywords": [
+      "分数",
+      "かけ算",
+      "整数",
+      "約分",
+      "0"
+    ],
+    "summary": "分数と整数のかけ算を、分子に整数をかける方法で計算します。"
+  },
+  {
+    "id": "f-091",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F16級",
+    "type": "basic",
+    "title": "時間の単位②",
+    "startPage": 11,
+    "endPage": 12,
+    "keywords": [
+      "時間",
+      "分",
+      "秒",
+      "分数",
+      "単位換算"
+    ],
+    "summary": "時間・分・秒を分数を用いて換算します。"
+  },
+  {
+    "id": "f-092",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F15級",
+    "type": "basic",
+    "title": "分数のかけ算②",
+    "startPage": 13,
+    "endPage": 14,
+    "keywords": [
+      "分数",
+      "かけ算",
+      "分母",
+      "分子",
+      "約分"
+    ],
+    "summary": "分数どうしのかけ算を、分母どうし・分子どうしをかけて求めます。"
+  },
+  {
+    "id": "f-093",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F14級",
+    "type": "basic",
+    "title": "分数のかけ算③",
+    "startPage": 15,
+    "endPage": 16,
+    "keywords": [
+      "帯分数",
+      "仮分数",
+      "かけ算",
+      "約分"
+    ],
+    "summary": "帯分数を仮分数に直してから、分数のかけ算を行います。"
+  },
+  {
+    "id": "f-094",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F13級",
+    "type": "basic",
+    "title": "分数のかけ算④",
+    "startPage": 17,
+    "endPage": 18,
+    "keywords": [
+      "連続したかけ算",
+      "帯分数",
+      "仮分数",
+      "約分"
+    ],
+    "summary": "複数の分数・整数のかけ算を一度に計算し、途中で約分します。"
+  },
+  {
+    "id": "f-095",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F12級",
+    "type": "basic",
+    "title": "分数のわり算①",
+    "startPage": 19,
+    "endPage": 20,
+    "keywords": [
+      "分数",
+      "わり算",
+      "整数",
+      "帯分数",
+      "仮分数"
+    ],
+    "summary": "分数を整数でわる計算を、分母に整数をかける方法で求めます。"
+  },
+  {
+    "id": "f-096",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F11級",
+    "type": "basic",
+    "title": "分数のわり算②",
+    "startPage": 21,
+    "endPage": 22,
+    "keywords": [
+      "分数",
+      "わり算",
+      "逆数",
+      "約分"
+    ],
+    "summary": "わる数を逆数にして、かけ算に直して計算します。"
+  },
+  {
+    "id": "f-097",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F10級",
+    "type": "basic",
+    "title": "分数のわり算③",
+    "startPage": 23,
+    "endPage": 24,
+    "keywords": [
+      "帯分数",
+      "仮分数",
+      "逆数",
+      "分数のわり算"
+    ],
+    "summary": "帯分数を含む分数のわり算を、仮分数と逆数を使って計算します。"
+  },
+  {
+    "id": "f-098",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F9級",
+    "type": "basic",
+    "title": "分数のかけ算とわり算",
+    "startPage": 25,
+    "endPage": 26,
+    "keywords": [
+      "分数",
+      "かけ算",
+      "わり算",
+      "混合計算",
+      "逆数"
+    ],
+    "summary": "かけ算とわり算が混じった分数計算を、かけ算に統一して求めます。"
+  },
+  {
+    "id": "f-099",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "プラスF☆3",
+    "type": "plus",
+    "title": "割合⑥",
+    "startPage": 27,
+    "endPage": 28,
+    "keywords": [
+      "割合",
+      "分数",
+      "もとにする量",
+      "くらべられる量"
+    ],
+    "summary": "割合を分数で表し、もとにする量・くらべられる量を求めます。"
+  },
+  {
+    "id": "f-100",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F8級",
+    "type": "basic",
+    "title": "角柱・円柱の体積",
+    "startPage": 29,
+    "endPage": 30,
+    "keywords": [
+      "角柱",
+      "円柱",
+      "体積",
+      "底面積",
+      "高さ",
+      "円周率"
+    ],
+    "summary": "角柱と円柱の体積を「底面積×高さ」で求めます。"
+  },
+  {
+    "id": "f-101",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F7級",
+    "type": "basic",
+    "title": "比①",
+    "startPage": 31,
+    "endPage": 32,
+    "keywords": [
+      "比",
+      "比の値",
+      "簡単な比",
+      "小数",
+      "分数"
+    ],
+    "summary": "比の値を求め、整数・小数・分数の比を簡単にします。"
+  },
+  {
+    "id": "f-102",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F6級",
+    "type": "basic",
+    "title": "比②",
+    "startPage": 33,
+    "endPage": 34,
+    "keywords": [
+      "等しい比",
+      "比例式",
+      "空欄",
+      "比"
+    ],
+    "summary": "同じ数をかけたりわったりして等しい比を作り、空欄を求めます。"
+  },
+  {
+    "id": "f-103",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "プラスF☆4",
+    "type": "plus",
+    "title": "比③",
+    "startPage": 35,
+    "endPage": 36,
+    "keywords": [
+      "比",
+      "比で分ける",
+      "按分",
+      "人数",
+      "長さ"
+    ],
+    "summary": "比の関係から数量を求めたり、全体を指定された比で分けたりします。"
+  },
+  {
+    "id": "f-104",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "プラスF☆5",
+    "type": "plus",
+    "title": "拡大図と縮図",
+    "startPage": 37,
+    "endPage": 38,
+    "keywords": [
+      "拡大図",
+      "縮図",
+      "縮尺",
+      "影",
+      "地図",
+      "比"
+    ],
+    "summary": "相似な図形の比や縮尺を使って、実際の長さを求めます。"
+  },
+  {
+    "id": "f-105",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F5級",
+    "type": "basic",
+    "title": "比例",
+    "startPage": 39,
+    "endPage": 40,
+    "keywords": [
+      "比例",
+      "x",
+      "y",
+      "表",
+      "式",
+      "決まった値"
+    ],
+    "summary": "比例の表と式 y=(決まった値)×x を使って値を求めます。"
+  },
+  {
+    "id": "f-106",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F4級",
+    "type": "basic",
+    "title": "反比例",
+    "startPage": 41,
+    "endPage": 42,
+    "keywords": [
+      "反比例",
+      "x",
+      "y",
+      "表",
+      "式",
+      "決まった値"
+    ],
+    "summary": "反比例の表と式 y=(決まった値)÷x を使って値を求めます。"
+  },
+  {
+    "id": "f-107",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F3級",
+    "type": "basic",
+    "title": "場合の数",
+    "startPage": 43,
+    "endPage": 44,
+    "keywords": [
+      "場合の数",
+      "樹形図",
+      "並べ方",
+      "組み合わせ",
+      "カード"
+    ],
+    "summary": "樹形図や組み合わせの列挙を使って、場合の数を求めます。"
+  },
+  {
+    "id": "f-108",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F2級",
+    "type": "basic",
+    "title": "代表値①",
+    "startPage": 45,
+    "endPage": 46,
+    "keywords": [
+      "平均値",
+      "中央値",
+      "最頻値",
+      "資料",
+      "データ"
+    ],
+    "summary": "資料から平均値・中央値・最頻値を求めます。"
+  },
+  {
+    "id": "f-109",
+    "grade": "F",
+    "pdf": "./pdf/sansu_F.pdf",
+    "code": "F1級",
+    "type": "basic",
+    "title": "代表値②",
+    "startPage": 47,
+    "endPage": 48,
+    "keywords": [
+      "度数分布表",
+      "階級",
+      "度数",
+      "資料",
+      "データ"
+    ],
+    "summary": "資料を階級に分けて度数分布表に整理し、該当する階級を読み取ります。"
+  }
 ]
