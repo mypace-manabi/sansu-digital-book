@@ -18,7 +18,6 @@ const els = {
   unitTitle: document.getElementById('unitTitle'),
   unitSummary: document.getElementById('unitSummary'),
   unitKeywords: document.getElementById('unitKeywords'),
-  copyLink: document.getElementById('copyLinkButton'),
   sidebar: document.getElementById('sidebar'),
   menuButton: document.getElementById('menuButton'),
   toast: document.getElementById('toast')
@@ -100,10 +99,17 @@ function renderToc() {
   }));
 }
 function loadPdfPage() {
-  // Browser built-in PDF viewer. Avoids external PDF.js/CDN dependency.
-  els.frame.src = `${PDF_URL}#page=${currentPage}&zoom=page-width&toolbar=1&navpanes=0`;
-  els.loading.style.display = 'none';
-  els.frame.style.display = 'block';
+  // GitHub PagesではPDF URLにクエリ文字列を付けると、環境によって
+  // PDFがテキストとして表示されることがあります。
+  // 一度about:blankへ切り替えてから、ハッシュだけでページを指定します。
+  const viewerUrl = `${PDF_URL}#page=${currentPage}&zoom=page-width&toolbar=1&navpanes=0`;
+  els.loading.style.display = 'block';
+  els.loading.textContent = `PDFの${currentPage}ページを開いています...`;
+  els.frame.style.display = 'none';
+  els.frame.src = 'about:blank';
+  requestAnimationFrame(() => {
+    els.frame.src = viewerUrl;
+  });
   els.pageInput.value = currentPage;
   els.pageCount.textContent = `/ ${totalPages}`;
   els.prevPage.disabled = currentPage <= 1;
@@ -144,10 +150,12 @@ els.prevUnit.addEventListener('click', () => goToRelativeUnit(-1));
 els.nextUnit.addEventListener('click', () => goToRelativeUnit(1));
 els.pageInput.addEventListener('change', () => goToPage(Number(els.pageInput.value)));
 els.menuButton.addEventListener('click', () => els.sidebar.classList.toggle('open'));
-els.copyLink.addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText(location.href); showToast('単元のURLをコピーしました'); }
-  catch (_) { showToast('URLをコピーできませんでした'); }
+els.frame.addEventListener('load', () => {
+  if (els.frame.src === 'about:blank') return;
+  els.loading.style.display = 'none';
+  els.frame.style.display = 'block';
 });
+
 window.addEventListener('keydown', event => {
   if (event.target.matches('input')) return;
   if (event.key === 'ArrowLeft') goToPage(currentPage - 1);
