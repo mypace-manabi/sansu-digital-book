@@ -1,189 +1,22 @@
-:root {
-  --bg: #eef3f7;
-  --panel: #ffffff;
-  --line: #d7e0e8;
-  --text: #24313d;
-  --muted: #647485;
-  --accent: #1198c4;
-  --accent-dark: #08749a;
-  --accent-soft: #e7f7fc;
-  --shadow: 0 8px 26px rgba(20, 45, 65, 0.12);
-}
+# 算数指導書デジタルブック（安定版）
 
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body {
-  font-family: "Meiryo UI", "Yu Gothic UI", "Noto Sans JP", sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  overflow: hidden;
-}
-button, input { font: inherit; }
-button { cursor: pointer; }
+外部CDNのPDF.jsを使わず、ブラウザ標準のPDF表示機能を利用する版です。
 
-.app-header {
-  height: 68px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0 18px;
-  background: var(--panel);
-  border-bottom: 1px solid var(--line);
-  position: relative;
-  z-index: 20;
-}
-.brand { min-width: 0; flex: 1; }
-.brand-title { font-size: 18px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.brand-subtitle { color: var(--muted); font-size: 12px; margin-top: 2px; }
-.secondary-button, .icon-button, .small-button, .toolbar-button, .filter-chip {
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--text);
-  border-radius: 8px;
-}
-.secondary-button { padding: 9px 13px; }
-.secondary-button:hover, .toolbar-button:hover, .filter-chip:hover { border-color: var(--accent); color: var(--accent-dark); }
-.icon-button { width: 40px; height: 40px; }
+## 更新手順
+GitHubのリポジトリで、次のファイルを上書きしてください。
+- index.html
+- app.js
+- styles.css
 
-.app-shell {
-  height: calc(100% - 68px);
-  display: grid;
-  grid-template-columns: 330px minmax(0, 1fr);
-}
-.sidebar {
-  background: var(--panel);
-  border-right: 1px solid var(--line);
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  z-index: 15;
-}
-.sidebar-head { padding: 16px; border-bottom: 1px solid var(--line); }
-.search-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
-.search-row { display: grid; grid-template-columns: 1fr 36px; gap: 6px; }
-.search-row input {
-  width: 100%;
-  padding: 10px 11px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  outline: none;
-}
-.search-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.small-button { font-size: 20px; }
-.filter-row { display: flex; gap: 7px; margin-top: 12px; }
-.filter-chip { padding: 6px 10px; font-size: 12px; }
-.filter-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.result-count { margin-top: 10px; color: var(--muted); font-size: 12px; }
-.toc-list { overflow: auto; padding: 8px; }
-.toc-item {
-  width: 100%;
-  text-align: left;
-  border: 0;
-  border-radius: 9px;
-  background: transparent;
-  padding: 11px 12px;
-  display: grid;
-  grid-template-columns: 56px 1fr 34px;
-  gap: 8px;
-  align-items: center;
-  color: var(--text);
-}
-.toc-item:hover { background: #f3f7fa; }
-.toc-item.active { background: var(--accent-soft); color: var(--accent-dark); }
-.toc-code { font-size: 12px; font-weight: 700; }
-.toc-title { font-size: 14px; line-height: 1.35; }
-.toc-page { color: var(--muted); font-size: 12px; text-align: right; }
-.empty-result { color: var(--muted); padding: 24px 12px; text-align: center; line-height: 1.7; }
+`data/contents.json` と `pdf/sansu_F.pdf` は、そのままで構いません。
 
-.viewer-area { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
-.toolbar {
-  min-height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 8px 10px;
-  background: rgba(255,255,255,0.94);
-  border-bottom: 1px solid var(--line);
-}
-.toolbar-button { padding: 7px 10px; }
-.toolbar-button:disabled { opacity: 0.4; cursor: default; }
-.page-control { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
-.page-control input { width: 58px; padding: 6px; border: 1px solid var(--line); border-radius: 6px; text-align: center; }
-.toolbar-separator { width: 1px; height: 24px; background: var(--line); margin: 0 4px; }
-.zoom-label { width: 48px; text-align: center; font-size: 12px; color: var(--muted); }
+反映後は次のURLを開き、Ctrl+F5で強制再読み込みしてください。
+https://mypace-manabi.github.io/sansu-digital-book/
 
-.unit-info {
-  padding: 12px 20px 10px;
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-}
-.unit-info > div:first-child { display: flex; align-items: center; gap: 10px; }
-.unit-badge { display: inline-block; border-radius: 999px; background: var(--accent); color: #fff; padding: 4px 9px; font-size: 12px; font-weight: 700; }
-.unit-title { display: inline; font-size: 18px; margin: 0; }
-.unit-summary { color: var(--muted); margin: 7px 0; font-size: 13px; line-height: 1.55; }
-.keyword-list { display: flex; flex-wrap: wrap; gap: 5px; }
-.keyword { background: #f1f5f8; border-radius: 999px; padding: 3px 8px; font-size: 11px; color: #516273; }
+## 直接確認用URL
+- PDF: `https://mypace-manabi.github.io/sansu-digital-book/pdf/sansu_F.pdf`
+- 目次JSON: `https://mypace-manabi.github.io/sansu-digital-book/data/contents.json`
 
-.pdf-viewport {
-  flex: 1;
-  min-height: 0;
-  overflow: auto;
-  padding: 24px;
-  text-align: center;
-  background: #dfe6eb;
-}
-#pdfCanvas { background: #fff; box-shadow: var(--shadow); max-width: none; }
-.loading-message { padding: 40px; color: var(--muted); }
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translate(-50%, 20px);
-  background: rgba(25,35,45,0.92);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  opacity: 0;
-  pointer-events: none;
-  transition: .2s ease;
-  z-index: 50;
-}
-.toast.show { opacity: 1; transform: translate(-50%, 0); }
-.mobile-only { display: none; }
-
-@media (max-width: 850px) {
-  body { overflow: auto; }
-  .app-header { position: sticky; top: 0; }
-  .mobile-only { display: inline-block; }
-  .secondary-button { font-size: 12px; padding: 8px; }
-  .app-shell { height: calc(100vh - 68px); grid-template-columns: 1fr; }
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 68px;
-    bottom: 0;
-    width: min(88vw, 350px);
-    transform: translateX(-105%);
-    transition: transform .2s ease;
-    box-shadow: var(--shadow);
-  }
-  .sidebar.open { transform: translateX(0); }
-  .toolbar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
-  .toolbar-button { white-space: nowrap; }
-  .unit-info { padding: 10px 14px; }
-  .pdf-viewport { padding: 12px; }
-}
-.pdf-frame {
-  display: none;
-  width: 100%;
-  height: 100%;
-  min-height: 640px;
-  border: 0;
-  background: #fff;
-}
-.pdf-open-link { text-decoration: none; color: inherit; }
-@media (max-width: 850px) {
-  .pdf-frame { min-height: calc(100vh - 210px); }
-}
+## 2026-07 更新
+- 画面上部のタイトル帯と「この単元のURLをコピー」を削除しました。
+- 単元選択時に、Chrome/Edge内蔵PDFビューアーを強制再読み込みして、該当ページへ確実に移動するよう修正しました。
