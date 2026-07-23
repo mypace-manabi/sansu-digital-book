@@ -99,17 +99,27 @@ function renderToc() {
   }));
 }
 function loadPdfPage() {
-  // GitHub PagesではPDF URLにクエリ文字列を付けると、環境によって
-  // PDFがテキストとして表示されることがあります。
-  // 一度about:blankへ切り替えてから、ハッシュだけでページを指定します。
+  // ブラウザ標準のPDFビューアーは、同じiframeのURLハッシュだけを
+  // 変更すると、最初の操作を無視する場合があります。
+  // ページ移動ごとにiframe自体を作り直し、1回の操作で確実に読み込みます。
   const viewerUrl = `${PDF_URL}#page=${currentPage}&zoom=page-width&toolbar=1&navpanes=0`;
   els.loading.style.display = 'block';
   els.loading.textContent = `PDFの${currentPage}ページを開いています...`;
-  els.frame.style.display = 'none';
-  els.frame.src = 'about:blank';
-  requestAnimationFrame(() => {
-    els.frame.src = viewerUrl;
-  });
+
+  const oldFrame = els.frame;
+  const newFrame = document.createElement('iframe');
+  newFrame.id = 'pdfFrame';
+  newFrame.className = 'pdf-frame';
+  newFrame.title = '算数指導書PDF';
+  newFrame.style.display = 'none';
+  newFrame.addEventListener('load', () => {
+    els.loading.style.display = 'none';
+    newFrame.style.display = 'block';
+  }, { once: true });
+  newFrame.src = viewerUrl;
+  oldFrame.replaceWith(newFrame);
+  els.frame = newFrame;
+
   els.pageInput.value = currentPage;
   els.pageCount.textContent = `/ ${totalPages}`;
   els.prevPage.disabled = currentPage <= 1;
@@ -150,12 +160,6 @@ els.prevUnit.addEventListener('click', () => goToRelativeUnit(-1));
 els.nextUnit.addEventListener('click', () => goToRelativeUnit(1));
 els.pageInput.addEventListener('change', () => goToPage(Number(els.pageInput.value)));
 els.menuButton.addEventListener('click', () => els.sidebar.classList.toggle('open'));
-els.frame.addEventListener('load', () => {
-  if (els.frame.src === 'about:blank') return;
-  els.loading.style.display = 'none';
-  els.frame.style.display = 'block';
-});
-
 window.addEventListener('keydown', event => {
   if (event.target.matches('input')) return;
   if (event.key === 'ArrowLeft') goToPage(currentPage - 1);
